@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#3b2418">
+<meta name="description" content="Elada's Corner Cafe in Glendale, CA — fresh pastries, breakfast, sandwiches, specialty drinks, desserts, and celebration cakes.">
+<title>Elada's Corner Cafe | Glendale, CA</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fff9ef;--paper:#fffdf8;--brown:#3b2418;--brown2:#654433;
+  --gold:#bd8b42;--gold-light:#ead6ad;--muted:#8b7768;--line:#eee1d0;
+  --shadow:0 14px 45px rgba(59,36,24,.08);
+  --shadow-lg:0 22px 60px rgba(59,36,24,.14);
+  --radius:22px;--ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
+body{
+  background:var(--cream);color:var(--brown);
+  font-family:"DM Sans",sans-serif;line-height:1.6;
+  overflow-x:hidden;-webkit-tap-highlight-color:transparent;min-width:0;
+}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;touch-action:manipulation}
+img{max-width:100%;height:auto;display:block}
+svg{display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:10px}
+
+.container{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+.serif{font-family:"Playfair Display",serif}
+section[id],div[id]{scroll-margin-top:92px}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  background:linear-gradient(90deg,#3b2418,#4a2e1f 50%,#3b2418);
+  color:#fff8eb;text-align:center;font-size:12px;padding:10px 16px;
+  letter-spacing:.25px;line-height:1.5;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar::before{
+  content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:#7fbf7f;margin-right:8px;vertical-align:middle;
+  box-shadow:0 0 0 3px rgba(127,191,127,.15);
+}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,249,239,.94);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(189,139,66,.12);
+}
+.nav{
+  min-height:72px;height:auto;padding-block:10px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.logo{display:flex;align-items:center;gap:10px;min-width:0}
+.logo-mark{
+  width:42px;height:42px;border-radius:50%;background:var(--brown);
+  color:#fff5df;display:grid;place-items:center;
+  font-family:"Playfair Display",serif;font-size:20px;flex:none;
+  transition:transform .4s var(--ease);
+}
+.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.05)}
+.logo-text{min-width:0}
+.logo-text strong{display:block;font-family:"Playfair Display",serif;font-size:17px;line-height:1.1}
+.logo-text span{font-size:9px;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+
+.nav-links{display:none;gap:26px;font-size:14px;font-weight:600}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;
+  background:var(--gold);transition:width .3s var(--ease);
+}
+.nav-links a:hover::after{width:100%}
+
+.nav-actions{display:flex;align-items:center;gap:8px;min-width:0}
+.icon-btn,.lang-btn{
+  height:42px;border:1px solid var(--line);background:var(--paper);
+  display:grid;place-items:center;color:var(--brown);
+  transition:background-color .25s var(--ease),border-color .25s var(--ease),
+             transform .25s var(--ease),color .25s var(--ease);
+}
+.icon-btn{width:42px;border-radius:50%;flex:none}
+.icon-btn svg{width:19px;height:19px;flex:none}
+.lang-btn{border-radius:12px;min-width:52px;padding:0 11px;font-size:12px;font-weight:700;letter-spacing:.5px;flex:none}
+.icon-btn:hover,.lang-btn:hover{background:#f7eddf;border-color:var(--gold-light);transform:translateY(-2px)}
+.icon-btn:active,.lang-btn:active,.order-btn:active{transform:translateY(0)}
+.icon-btn.ig-btn:hover{color:#c13584;border-color:#e6b8d4;background:#fdf4f9}
+.icon-btn.call-btn:hover{color:#45844c;border-color:#b8dcc0;background:#f1f8f3}
+
+.order-btn{
+  background:var(--gold);color:#fff;border:0;padding:12px 16px;border-radius:13px;
+  font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(189,139,66,.2);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background-color .25s var(--ease);
+  white-space:nowrap;
+}
+.order-btn:hover{background:#a97a35;transform:translateY(-2px);box-shadow:0 10px 24px rgba(189,139,66,.3)}
+
+/* ---------- Hero ---------- */
+.hero{padding:24px 0 35px}
+.hero-grid{display:grid;gap:25px}
+.hero-copy{padding-top:8px;min-width:0}
+.eyebrow{
+  color:var(--gold);text-transform:uppercase;font-size:11px;
+  letter-spacing:2.5px;font-weight:700;margin-bottom:14px;
+}
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(42px,11vw,76px);
+  line-height:1.02;letter-spacing:-2px;max-width:700px;
+  overflow-wrap:anywhere;
+}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{color:var(--muted);max-width:480px;margin:20px 0;font-size:15px}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap}
+
+.btn{
+  min-height:48px;display:inline-flex;align-items:center;justify-content:center;
+  padding:0 20px;border-radius:13px;font-size:13px;font-weight:700;
+  border:1px solid var(--line);text-align:center;
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),
+             background-color .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
+}
+.btn-primary{background:var(--brown);color:#fff;border-color:var(--brown)}
+.btn-primary:hover{background:#4d3122;transform:translateY(-2px);box-shadow:0 10px 24px rgba(59,36,24,.22)}
+.btn-secondary{background:transparent;color:var(--brown)}
+.btn-secondary:hover{background:var(--paper);border-color:var(--gold-light);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+
+.hero-image{
+  min-height:330px;border-radius:28px;overflow:hidden;position:relative;
+  background:linear-gradient(180deg,transparent 35%,rgba(35,18,8,.6)),
+             url("https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=85") center/cover;
+}
+.hero-image-caption{position:absolute;bottom:20px;left:20px;right:20px;color:#fff}
+.hero-image-caption small{opacity:.8;font-size:11px}
+.hero-image-caption strong{display:block;font-family:"Playfair Display",serif;font-size:23px}
+
+/* ---------- Quick actions ---------- */
+.quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:8px 0 55px}
+.quick-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:17px;
+  padding:15px;display:flex;gap:10px;align-items:center;color:var(--brown);
+  text-align:left;width:100%;font:inherit;appearance:none;-webkit-appearance:none;min-width:0;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .25s var(--ease);
+}
+.quick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--gold-light)}
+.quick-card:active{transform:translateY(-1px)}
+.quick-icon{
+  width:36px;height:36px;border-radius:11px;background:#f5ead7;
+  display:grid;place-items:center;font-size:16px;flex:none;
+}
+.quick-card small{display:block;color:var(--muted);font-size:10px;line-height:1.3}
+.quick-card strong{font-size:12px;display:block;line-height:1.3;overflow-wrap:anywhere}
+
+/* ---------- Sections ---------- */
+.section{padding:45px 0}
+.section-heading{margin-bottom:25px}
+.section-heading .eyebrow{margin-bottom:8px}
+.section-heading h2{font-family:"Playfair Display",serif;font-size:clamp(30px,7vw,38px);line-height:1.1}
+.section-heading p{color:var(--muted);font-size:14px;margin-top:9px}
+
+/* ---------- Menu ---------- */
+.menu-layout{display:grid;gap:25px}
+.menu-tabs{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;min-width:0;
+}
+.menu-tabs::-webkit-scrollbar{display:none}
+.menu-tab{
+  white-space:nowrap;padding:11px 15px;border:1px solid var(--line);
+  background:var(--paper);border-radius:30px;font-size:12px;font-weight:700;
+  color:var(--brown2);flex:none;
+  transition:background-color .25s var(--ease),color .25s var(--ease),
+             border-color .25s var(--ease),transform .25s var(--ease);
+}
+.menu-tab:hover{border-color:var(--gold-light);transform:translateY(-2px)}
+.menu-tab.active{background:var(--brown);color:#fff;border-color:var(--brown)}
+
+.menu-panel{display:none}
+.menu-panel.active{display:block;animation:panelIn .35s var(--ease) both}
+@keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.menu-list{display:grid;gap:9px}
+.menu-item{
+  display:flex;justify-content:space-between;align-items:center;gap:15px;
+  padding:15px 16px;background:var(--paper);border:1px solid var(--line);
+  border-radius:15px;min-width:0;
+  transition:border-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.menu-item:hover{border-color:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 22px rgba(59,36,24,.06)}
+.menu-item strong{font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.menu-item span{font-size:11px;color:var(--muted);text-align:right;flex:none}
+
+/* ---------- Feature cards ---------- */
+.feature-grid{display:grid;gap:15px}
+.feature-card{
+  border-radius:22px;min-height:230px;overflow:hidden;position:relative;
+  background-size:cover;background-position:center;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.feature-card::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(40,20,10,.78),transparent 65%);
+}
+.feature-card>div{position:absolute;z-index:2;bottom:18px;left:18px;right:18px;color:#fff}
+.feature-card h3{font-family:"Playfair Display",serif;font-size:25px}
+.feature-card p{font-size:12px;opacity:.85}
+
+/* ---------- Cake section ---------- */
+.cake-section{background:var(--brown);color:#fff;padding:50px 0}
+.cake-section .eyebrow{color:var(--gold-light)}
+.cake-section p{color:#d9c5ae}
+.cake-grid{display:grid;gap:25px}
+.cake-list{display:grid;gap:10px;margin-top:20px}
+.cake-list div{
+  border-bottom:1px solid rgba(255,255,255,.12);padding:10px 0;font-size:13px;
+  display:flex;justify-content:space-between;gap:12px;
+}
+.cake-form{background:#fffaf1;color:var(--brown);border-radius:22px;padding:20px}
+.cake-form h3{font-family:"Playfair Display",serif;font-size:25px;margin-bottom:15px}
+.form-grid{display:grid;gap:11px}
+.field label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}
+.field input,.field select,.field textarea{
+  width:100%;max-width:100%;border:1px solid var(--line);border-radius:11px;
+  padding:12px;outline:none;background:#fff;color:var(--brown);font-size:13px;
+  transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--gold);box-shadow:0 0 0 3px rgba(189,139,66,.14);
+}
+.field textarea{min-height:85px;resize:vertical}
+.form-submit{
+  width:100%;padding:14px;border:0;border-radius:12px;background:var(--gold);
+  color:#fff;font-weight:700;margin-top:5px;
+  transition:background-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.form-submit:hover{background:#a97a35;transform:translateY(-2px);box-shadow:0 10px 24px rgba(189,139,66,.28)}
+.form-submit:active{transform:translateY(0)}
+
+/* ---------- Visit ---------- */
+.hours-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  padding:23px;display:grid;gap:17px;align-content:start;
+}
+.hours-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;min-width:0}
+.hours-row span{color:var(--muted)}
+.hours-row strong{text-align:right;overflow-wrap:anywhere}
+.open-status{color:#45844c;font-weight:700;font-size:12px}
+.location-grid{display:grid;gap:20px}
+.map-box{
+  min-height:260px;border-radius:22px;
+  background:linear-gradient(rgba(60,35,20,.12),rgba(60,35,20,.12)),
+             url("https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=1000&q=80") center/cover;
+  display:flex;align-items:flex-end;padding:18px;
+}
+.map-box a{
+  background:#fff;border-radius:12px;padding:12px 15px;font-size:12px;font-weight:700;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.map-box a:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+/* ---------- Instagram ---------- */
+.instagram{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.insta-card{
+  aspect-ratio:1;border-radius:15px;overflow:hidden;
+  background-size:cover;background-position:center;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.insta-card:hover{transform:scale(1.03);box-shadow:var(--shadow-lg)}
+
+.instagram-link{text-align:center;margin-top:22px}
+.instagram-link a{
+  font-size:13px;font-weight:700;color:var(--gold);
+  display:inline-flex;align-items:center;gap:9px;padding:11px 20px;
+  border:1px solid var(--line);border-radius:30px;background:var(--paper);
+  max-width:100%;transition:transform .25s var(--ease),color .25s var(--ease),
+             border-color .25s var(--ease),background-color .25s var(--ease),box-shadow .25s var(--ease);
+}
+.instagram-link a:hover{
+  transform:translateY(-2px);color:#c13584;border-color:#e6b8d4;
+  background:#fdf4f9;box-shadow:0 10px 24px rgba(193,53,132,.12);
+}
+.instagram-link svg{flex:none}
+
+/* ---------- Footer ---------- */
+footer{background:#29180f;color:#d7c3ae;padding:35px 0 105px}
+.footer-grid{display:grid;gap:25px}
+footer h3{font-family:"Playfair Display",serif;color:#fff;font-size:24px}
+footer p{font-size:13px;max-width:330px}
+.footer-links{display:flex;gap:15px;flex-wrap:wrap;font-size:12px}
+.footer-links a{transition:color .2s var(--ease)}
+.footer-links a:hover{color:var(--gold-light)}
+.footer-social{display:inline-flex;align-items:center;gap:8px}
+.footer-social svg{flex:none}
+.footer-social:hover{color:#e8b8d6}
+.copyright{font-size:11px;color:#927965;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
+
+/* ---------- Mobile nav ---------- */
+.mobile-nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(255,253,248,.97);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  padding:8px 5px max(8px,env(safe-area-inset-bottom));
+}
+.mobile-nav a{
+  min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;font-size:10px;color:var(--muted);font-weight:600;min-width:0;
+  transition:color .2s var(--ease),transform .2s var(--ease);
+}
+.mobile-nav a:active{transform:scale(.94)}
+.mobile-nav a.active{color:var(--gold)}
+.mobile-nav .nav-order{color:var(--brown);font-weight:800}
+
+/* ---------- Toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:85px;z-index:200;
+  transform:translateX(-50%) translateY(20px);
+  background:var(--brown);color:#fff;padding:13px 18px;border-radius:12px;
+  font-size:12px;opacity:0;pointer-events:none;
+  transition:opacity .3s var(--ease),transform .3s var(--ease);
+  max-width:calc(100% - 32px);text-align:center;box-shadow:var(--shadow-lg);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ---------- Modal ---------- */
+.modal{
+  display:none;position:fixed;inset:0;z-index:150;
+  background:rgba(30,15,8,.6);align-items:flex-end;justify-content:center;
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+}
+.modal.show{display:flex;animation:fadeIn .25s var(--ease) both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{
+  width:min(100%,600px);background:var(--paper);
+  border-radius:25px 25px 0 0;padding:25px;max-height:90vh;overflow:auto;
+  animation:sheetUp .38s var(--ease) both;
+}
+@keyframes sheetUp{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
+.modal-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}
+.modal-top h2{font-family:"Playfair Display",serif;font-size:27px}
+.close{
+  background:#f5ead7;border-radius:50%;width:38px;height:38px;flex:none;
+  display:grid;place-items:center;font-size:20px;line-height:1;
+  transition:background-color .2s var(--ease),transform .2s var(--ease);
+}
+.close:hover{background:#ead6ad;transform:rotate(90deg)}
+.order-placeholder{
+  background:#f7eddf;border:1px dashed var(--gold);border-radius:16px;
+  padding:20px;text-align:center;color:var(--brown2);font-size:13px;
+}
+.order-placeholder strong{display:block;font-family:"Playfair Display",serif;font-size:23px;margin-bottom:8px}
+.external-order{
+  display:block;text-align:center;background:var(--gold);color:#fff;
+  padding:15px;border-radius:12px;font-weight:700;margin-top:15px;
+  transition:background-color .25s var(--ease),transform .25s var(--ease);
+}
+.external-order:hover{background:#a97a35;transform:translateY(-2px)}
+
+/* ---------- Scroll reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(18px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- Small screens ---------- */
+@media (max-width:359px){
+  .container{width:calc(100% - 22px)}
+  .logo-mark{width:36px;height:36px;font-size:18px}
+  .logo-text strong{font-size:14px}
+  .nav-actions{gap:5px}
+  .lang-btn{min-width:40px;padding-inline:7px}
+  .order-btn{padding:10px 9px;font-size:11px}
+  .hero h1{font-size:39px;letter-spacing:-1.5px}
+  .btn{padding-inline:14px}
+  .quick-card{padding:11px 9px;gap:7px}
+  .quick-card strong{font-size:11px}
+  .quick-icon{width:32px;height:32px}
+  .menu-item{padding:13px 12px;gap:9px}
+  .menu-item strong{font-size:12px}
+}
+@media (max-width:767px){
+  .icon-btn.call-btn{display:none}
+}
+@media (max-width:420px){
+  .logo-text span{display:none}
+  .logo-text strong{font-size:15px}
+  .lang-btn{min-width:44px;padding:0 8px}
+  .order-btn{padding:11px 12px;font-size:12px}
+}
+
+/* ---------- Tablet ---------- */
+@media (min-width:768px){
+  .container{width:min(1180px,calc(100% - 64px))}
+  .nav{min-height:78px}
+  .hero{padding:55px 0 45px}
+  .hero-grid{grid-template-columns:1fr 1fr;align-items:center;gap:50px;min-height:560px}
+  .hero-copy{max-width:620px}
+  .hero-image{min-height:510px;width:100%}
+  .quick-actions{grid-template-columns:repeat(4,1fr)}
+  .quick-card{min-height:78px}
+  .menu-list{grid-template-columns:repeat(2,1fr)}
+  .feature-grid{grid-template-columns:repeat(3,1fr)}
+  .cake-grid{grid-template-columns:1fr 1fr;align-items:start}
+  .form-grid{grid-template-columns:1fr 1fr}
+  .field.full{grid-column:1/-1}
+  .location-grid{grid-template-columns:1fr 1fr}
+  .instagram{grid-template-columns:repeat(4,1fr)}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr}
+  .mobile-nav{display:none}
+  footer{padding-bottom:35px}
+  .toast{bottom:32px}
+  .modal{align-items:center;padding:24px}
+  .modal-box{border-radius:25px;padding:30px}
+}
+
+@media (min-width:768px) and (max-width:1199px){
+  .container{width:min(100% - 56px,1040px)}
+  .nav{gap:18px}
+  .nav-actions{gap:6px}
+  .nav-links{gap:16px}
+  .order-btn{padding-inline:13px}
+  .hero-grid{gap:32px}
+  .hero h1{font-size:clamp(48px,6vw,64px)}
+  .hero-image{min-height:470px}
+  .menu-layout{grid-template-columns:190px minmax(0,1fr);gap:20px}
+  .menu-list{grid-template-columns:1fr}
+  .feature-card{min-height:250px}
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width:1024px){
+  .nav-links{display:flex}
+  .hero h1{font-size:70px}
+  .hero-image{min-height:560px}
+  .menu-layout{grid-template-columns:230px 1fr;align-items:start}
+  .menu-tabs{display:grid;overflow:visible}
+  .menu-tab{text-align:left}
+  .menu-list{grid-template-columns:repeat(2,1fr)}
+  .section{padding:75px 0}
+  .modal-box{width:min(720px,100%)}
+}
+@media (min-width:1200px){
+  .hero-grid{gap:70px}
+  .menu-layout{gap:32px}
+  .menu-list{gap:12px}
+  .feature-card{min-height:270px}
+}
+@media (min-width:1440px){.container{width:1200px}}
+
+@media (min-width:768px) and (max-height:800px){
+  .hero{padding-top:35px;padding-bottom:35px}
+  .hero-grid{min-height:470px}
+  .hero-image{min-height:430px}
+  .section{padding-top:58px;padding-bottom:58px}
+}
+@media (orientation:landscape) and (min-width:768px) and (max-width:1100px){
+  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+  .hero-image{min-height:430px}
+  .quick-actions{margin-bottom:45px}
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar" data-i18n="topbar">Open daily · 8:00 AM – 12:00 AM · Glendale, California</div>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="Elada's Corner Cafe — home">
+      <div class="logo-mark" aria-hidden="true">E</div>
+      <div class="logo-text">
+        <strong>Elada's Corner</strong>
+        <span>Cafe &amp; Patisserie</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#menu" data-i18n="nav.menu">Menu</a>
+      <a href="#cakes" data-i18n="nav.cakes">Cakes</a>
+      <a href="#visit" data-i18n="nav.visit">Visit Us</a>
+      <a href="#instagram" data-i18n="nav.instagram">Instagram</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang-btn" type="button" id="languageBtn" aria-label="Change language">EN</button>
+
+      <!-- Instagram icon (real logo) -->
+      <a class="icon-btn ig-btn" data-ig href="https://www.instagram.com/"
+         target="_blank" rel="noopener" aria-label="Elada's Corner Cafe on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect>
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"></circle>
+        </svg>
+      </a>
+
+      <!-- Phone -->
+      <a class="icon-btn call-btn" data-tel href="tel:+18185550123" aria-label="Call Elada's Corner Cafe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2Z"></path>
+        </svg>
+      </a>
+
+      <button class="order-btn" type="button" onclick="openOrder()" data-i18n="nav.order">Order Now</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero.eyebrow">A little corner of something beautiful</div>
+        <h1 data-i18n-html="hero.title">Fresh Flavors <em>Waiting</em> to Be Discovered</h1>
+        <p data-i18n="hero.text">Discover handcrafted pastries, comforting breakfast favorites, specialty coffee, and beautiful cakes made for every occasion.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" type="button" onclick="openOrder()" data-i18n="hero.order">Order for Pickup →</button>
+          <a class="btn btn-secondary" href="#menu" data-i18n="hero.explore">Explore the Menu</a>
+        </div>
+      </div>
+
+      <div class="hero-image" role="img" aria-label="Freshly baked golden pastries at Elada's Corner Cafe">
+        <div class="hero-image-caption" aria-hidden="true">
+          <small>Made fresh with care</small>
+          <strong>Every bite tells a story.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUICK ACTIONS ================= -->
+  <section class="container quick-actions" aria-label="Quick actions">
+    <a class="quick-card reveal" href="#menu">
+      <div class="quick-icon" aria-hidden="true">☕</div>
+      <div><small data-i18n="quick.menu.s">Explore</small><strong data-i18n="quick.menu.t">Our Menu</strong></div>
+    </a>
+    <button class="quick-card reveal" type="button" onclick="openOrder()">
+      <div class="quick-icon" aria-hidden="true">🛍</div>
+      <div><small data-i18n="quick.order.s">Fast &amp; Easy</small><strong data-i18n="quick.order.t">Order Pickup</strong></div>
+    </button>
+    <a class="quick-card reveal" data-tel href="tel:+18185550123">
+      <div class="quick-icon" aria-hidden="true">☎</div>
+      <div><small data-i18n="quick.call.s">Questions?</small><strong data-i18n="quick.call.t">Call the Cafe</strong></div>
+    </a>
+    <a class="quick-card reveal" data-maps
+       href="https://www.google.com/maps/dir/?api=1&amp;destination=106+N+Glendale+Ave,+Glendale,+CA+91206"
+       target="_blank" rel="noopener">
+      <div class="quick-icon" aria-hidden="true">⌖</div>
+      <div><small data-i18n="quick.dir.s">Find Us</small><strong data-i18n="quick.dir.t">Get Directions</strong></div>
+    </a>
+  </section>
+
+  <!-- ================= MENU ================= -->
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="eyebrow" data-i18n="menu.eyebrow">Made for your cravings</div>
+        <h2 data-i18n="menu.title">Explore Our Menu</h2>
+        <p data-i18n="menu.sub">From your morning coffee to a cake worth celebrating.</p>
+      </div>
+
+      <div class="menu-layout">
+        <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+          <button class="menu-tab active" type="button" role="tab" aria-selected="true"  aria-controls="panel-0" id="tab-0" tabindex="0" onclick="showMenu(0,this)">Breakfast &amp; Pastries</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-1" id="tab-1" tabindex="-1" onclick="showMenu(1,this)">Savory Sandwiches</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" onclick="showMenu(2,this)">Drinks</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1" onclick="showMenu(3,this)">Desserts &amp; Pastries</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4" tabindex="-1" onclick="showMenu(4,this)">Full Tray Cakes</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-5" id="tab-5" tabindex="-1" onclick="showMenu(5,this)">Roll Cakes</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-6" id="tab-6" tabindex="-1" onclick="showMenu(6,this)">Whole Cakes</button>
+        </div>
+
+        <div class="menu-content">
+          <!-- 0 Breakfast & Pastries -->
+          <div class="menu-panel active" id="panel-0" role="tabpanel" aria-labelledby="tab-0" tabindex="0">
+            <div class="menu-list">
+              <div class="menu-item"><strong>Macaroons Mix</strong><span>Pastry</span></div>
+              <div class="menu-item"><strong>King Arthur Pastry</strong><span>Pastry</span></div>
+              <div class="menu-item"><strong>Meringue Cherry Roll</strong><span>Roll</span></div>
+              <div class="menu-item"><strong>Jello Cake with Nuts</strong><span>Cake</span></div>
+              <div class="menu-item"><strong>Breakfast Croissant</strong><span>Breakfast</span></div>
+              <div class="menu-item"><strong>Einspanner Latte</strong><span>Coffee</span></div>
+              <div class="menu-item"><strong>Baklava</strong><span>Classic</span></div>
+              <div class="menu-item"><strong>Chocolate Mousse</strong><span>Dessert</span></div>
+              <div class="menu-item"><strong>Ideal Roll Cake</strong><span>Roll</span></div>
+              <div class="menu-item"><strong>Roul Cake</strong><span>Roll</span></div>
+              <div class="menu-item"><strong>Elada's Ham Pesto</strong><span>Breakfast</span></div>
+              <div class="menu-item"><strong>Iced Matcha Latte</strong><span>Drink</span></div>
+            </div>
+          </div>
+
+          <!-- 1 Sandwiches -->
+          <div class="menu-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0" hidden>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Cheese Borek</strong><span>Savory</span></div>
+              <div class="menu-item"><strong>Sausage Roll</strong><span>Savory</span></div>
+              <div class="menu-item"><strong>Breakfast Croissant</strong><span>Breakfast</span></div>
+              <div class="menu-item"><strong>Elada's Duo Toast</strong><span>Toast</span></div>
+              <div class="menu-item"><strong>Elada's Ham Pesto</strong><span>Sandwich</span></div>
+              <div class="menu-item"><strong>Elada's Mortadella</strong><span>Sandwich</span></div>
+              <div class="menu-item"><strong>Elada's Turkey Pesto</strong><span>Sandwich</span></div>
+              <div class="menu-item"><strong>Salmon Bagel</strong><span>Bagel</span></div>
+            </div>
+          </div>
+
+          <!-- 2 Drinks -->
+          <div class="menu-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Espresso</strong><span>Coffee</span></div>
+              <div class="menu-item"><strong>Americano</strong><span>Coffee</span></div>
+              <div class="menu-item"><strong>Iced Matcha Latte</strong><span>Matcha</span></div>
+              <div class="menu-item"><strong>Iced Matcha with Cold Foam</strong><span>Matcha</span></div>
+              <div class="menu-item"><strong>Coconut Cloud Matcha</strong><span>Matcha</span></div>
+              <div class="menu-item"><strong>Maple Walnut Latte</strong><span>Latte</span></div>
+              <div class="menu-item"><strong>Brown Sugar Cinnamon Einspanner</strong><span>Specialty</span></div>
+              <div class="menu-item"><strong>Dolce De Leche Cinnamon Iced Latte</strong><span>Latte</span></div>
+              <div class="menu-item"><strong>Strawberry Matcha Latte</strong><span>Matcha</span></div>
+              <div class="menu-item"><strong>Sweethearts Latte</strong><span>Latte</span></div>
+            </div>
+          </div>
+
+          <!-- 3 Desserts -->
+          <div class="menu-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Cigarette Cookie</strong><span>Cookie</span></div>
+              <div class="menu-item"><strong>Jam Cookie</strong><span>Cookie</span></div>
+              <div class="menu-item"><strong>Sesame Cookie</strong><span>Cookie</span></div>
+              <div class="menu-item"><strong>Cherry Mousse</strong><span>Mousse</span></div>
+              <div class="menu-item"><strong>Chocolate Mousse</strong><span>Mousse</span></div>
+              <div class="menu-item"><strong>Baklava</strong><span>Classic</span></div>
+              <div class="menu-item"><strong>Blueberry Danish</strong><span>Danish</span></div>
+              <div class="menu-item"><strong>Caramel Pavlova</strong><span>Dessert</span></div>
+              <div class="menu-item"><strong>Chocolate Cheesecake</strong><span>Cheesecake</span></div>
+              <div class="menu-item"><strong>Tiramisu</strong><span>Dessert</span></div>
+              <div class="menu-item"><strong>Macaroons Mix</strong><span>Macaroon</span></div>
+              <div class="menu-item"><strong>Red Velvet Pastry</strong><span>Pastry</span></div>
+              <div class="menu-item"><strong>Strawberry Danish</strong><span>Danish</span></div>
+              <div class="menu-item"><strong>Apple Danish</strong><span>Danish</span></div>
+              <div class="menu-item"><strong>Almond Croissant</strong><span>Pastry</span></div>
+              <div class="menu-item"><strong>Chocolate Croissant</strong><span>Pastry</span></div>
+              <div class="menu-item"><strong>Fruit Tart</strong><span>Tart</span></div>
+              <div class="menu-item"><strong>Lemon Tart</strong><span>Tart</span></div>
+              <div class="menu-item"><strong>Napoleon Pastry</strong><span>Pastry</span></div>
+              <div class="menu-item"><strong>Honey Cake Slice</strong><span>Cake</span></div>
+              <div class="menu-item"><strong>Kievski Cake Slice</strong><span>Cake</span></div>
+              <div class="menu-item"><strong>Bird Milk Slice</strong><span>Cake</span></div>
+              <div class="menu-item"><strong>Carrot Cake Slice</strong><span>Cake</span></div>
+              <div class="menu-item"><strong>Opera Cake</strong><span>Cake</span></div>
+              <div class="menu-item"><strong>Seasonal Dessert Selection</strong><span>Seasonal</span></div>
+            </div>
+          </div>
+
+          <!-- 4 Full trays -->
+          <div class="menu-panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" tabindex="0" hidden>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Bird Milk Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Cranberry Cake Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Eskimo Cake Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Honey Cake Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Kievski Cake Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Kutuzov Cake Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Napoleon Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Snickers Cake Tray</strong><span>Full Tray</span></div>
+              <div class="menu-item"><strong>Traditional Pastry Mixed Tray</strong><span>Full Tray</span></div>
+            </div>
+          </div>
+
+          <!-- 5 Rolls -->
+          <div class="menu-panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" tabindex="0" hidden>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Apricot Jam Roll</strong><span>Roll Cake</span></div>
+              <div class="menu-item"><strong>Favorite Roll</strong><span>Roll Cake</span></div>
+              <div class="menu-item"><strong>Ideal Roll</strong><span>Roll Cake</span></div>
+              <div class="menu-item"><strong>Meringue Cherry Roll</strong><span>Roll Cake</span></div>
+              <div class="menu-item"><strong>Red Velvet Roll</strong><span>Roll Cake</span></div>
+            </div>
+          </div>
+
+          <!-- 6 Whole cakes -->
+          <div class="menu-panel" id="panel-6" role="tabpanel" aria-labelledby="tab-6" tabindex="0" hidden>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Birthday Cake — Plain</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Birthday Cake — With Bows</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Birthday Cake — With Topper</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Birthday Cake — Butterfly</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Berry Cake</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Chocolate Cake</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Christmas Cake</strong><span>Seasonal</span></div>
+              <div class="menu-item"><strong>Jello Cakes</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Mocha Cake</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Raspberry Cake</strong><span>Whole Cake</span></div>
+              <div class="menu-item"><strong>Raspberry Napoleon Cake</strong><span>Whole Cake</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="eyebrow" data-i18n="feat.eyebrow">A taste of Elada's</div>
+        <h2 data-i18n="feat.title">Made to Be Remembered</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=700&amp;q=80')">
+          <div><h3 data-i18n="feat.1.t">Fresh Pastries</h3><p data-i18n="feat.1.p">Golden, delicate, unforgettable.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=700&amp;q=80')">
+          <div><h3 data-i18n="feat.2.t">Specialty Coffee</h3><p data-i18n="feat.2.p">Your perfect daily ritual.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=700&amp;q=80')">
+          <div><h3 data-i18n="feat.3.t">Celebration Cakes</h3><p data-i18n="feat.3.p">Made for life's sweetest moments.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAKES ================= -->
+  <section class="cake-section" id="cakes">
+    <div class="container cake-grid">
+      <div class="reveal">
+        <div class="eyebrow" data-i18n="cakes.eyebrow">For your special moments</div>
+        <h2 class="serif" style="font-size:clamp(32px,7vw,42px);line-height:1.1"
+            data-i18n-html="cakes.title">Your celebration<br>deserves something special.</h2>
+        <p style="margin-top:15px;font-size:14px;max-width:470px" data-i18n="cakes.text">
+          Order whole cakes, full pastry trays, and custom celebration selections.
+          Submit your request and our team will contact you to confirm availability.
+        </p>
+        <div class="cake-list">
+          <div><span data-i18n="cakes.li.1">Whole Birthday Cakes</span><span aria-hidden="true">→</span></div>
+          <div><span data-i18n="cakes.li.2">Full Tray Cakes</span><span aria-hidden="true">→</span></div>
+          <div><span data-i18n="cakes.li.3">Roll Cakes</span><span aria-hidden="true">→</span></div>
+          <div><span data-i18n="cakes.li.4">Custom Celebration Requests</span><span aria-hidden="true">→</span></div>
+        </div>
+      </div>
+
+      <form class="cake-form reveal" id="cakeForm" novalidate>
+        <h3 data-i18n="form.title">Request a Cake</h3>
+        <div class="form-grid">
+          <div class="field">
+            <label for="cakeName" data-i18n="form.name">Your Name</label>
+            <input id="cakeName" name="name" type="text" required autocomplete="name"
+                   placeholder="Full name" data-i18n-ph="form.name.ph">
+          </div>
+          <div class="field">
+            <label for="cakePhone" data-i18n="form.phone">Phone Number</label>
+            <input id="cakePhone" name="phone" type="tel" required autocomplete="tel"
+                   placeholder="Phone number" data-i18n-ph="form.phone.ph">
+          </div>
+          <div class="field">
+            <label for="pickupDate" data-i18n="form.date">Preferred Pickup Date</label>
+            <input id="pickupDate" name="pickupDate" type="date" required>
+          </div>
+          <div class="field">
+            <label for="cakeType" data-i18n="form.type">Cake Type</label>
+            <select id="cakeType" name="cakeType" required>
+              <option value="" data-i18n="form.select">Select one</option>
+              <option data-i18n="form.opt.1">Whole Birthday Cake</option>
+              <option data-i18n="form.opt.2">Full Tray Cake</option>
+              <option data-i18n="form.opt.3">Roll Cake</option>
+              <option data-i18n="form.opt.4">Custom Request</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="cakeDetails" data-i18n="form.details">Tell us what you need</label>
+            <textarea id="cakeDetails" name="details"
+                      placeholder="Cake flavor, size, design, quantity, message..."
+                      data-i18n-ph="form.details.ph"></textarea>
+          </div>
+        </div>
+        <button class="form-submit" type="submit" data-i18n="form.submit">Send Cake Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= VISIT ================= -->
+  <section class="section" id="visit">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="eyebrow" data-i18n="visit.eyebrow">Come say hello</div>
+        <h2 data-i18n="visit.title">Visit Our Corner</h2>
+      </div>
+      <div class="location-grid">
+        <div class="hours-card reveal">
+          <div>
+            <div class="open-status" data-i18n="visit.badge">● Open Daily</div>
+            <h3 class="serif" style="font-size:29px;margin-top:5px" data-i18n="visit.hoursTitle">Hours &amp; Location</h3>
+          </div>
+          <div class="hours-row"><span data-i18n="visit.days">Monday – Sunday</span><strong data-i18n="visit.hours">8:00 AM – 12:00 AM</strong></div>
+          <div class="hours-row"><span data-i18n="visit.addrLabel">Address</span><strong data-i18n="visit.addr">106 N Glendale Ave</strong></div>
+          <div class="hours-row"><span data-i18n="visit.cityLabel">City</span><strong data-i18n="visit.city">Glendale, CA 91206</strong></div>
+          <p style="font-size:11px;color:var(--muted)" data-i18n="visit.note">Holiday hours may vary. Please call ahead on major holidays.</p>
+          <a class="btn btn-primary" data-maps
+             href="https://www.google.com/maps/dir/?api=1&amp;destination=106+N+Glendale+Ave,+Glendale,+CA+91206"
+             target="_blank" rel="noopener" data-i18n="visit.directions">Get Directions →</a>
+        </div>
+
+        <div class="map-box reveal">
+          <a data-maps href="https://www.google.com/maps/dir/?api=1&amp;destination=106+N+Glendale+Ave,+Glendale,+CA+91206"
+             target="_blank" rel="noopener" data-i18n="visit.map">Open in Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INSTAGRAM ================= -->
+  <section class="section" id="instagram">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div class="eyebrow" data-i18n="insta.eyebrow">Follow the sweetness</div>
+        <h2 data-i18n="insta.title">From Our Instagram</h2>
+        <p data-i18n="insta.sub">Fresh from our corner to your feed.</p>
+      </div>
+
+      <div class="instagram reveal">
+        <div class="insta-card" role="img" aria-label="Fresh pastries" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=500&amp;q=80')"></div>
+        <div class="insta-card" role="img" aria-label="Celebration cake" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=500&amp;q=80')"></div>
+        <div class="insta-card" role="img" aria-label="Specialty coffee" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=500&amp;q=80')"></div>
+        <div class="insta-card" role="img" aria-label="Coffee and dessert" style="background-image:url('https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&amp;fit=crop&amp;w=500&amp;q=80')"></div>
+      </div>
+
+      <div class="instagram-link reveal">
+        <a id="instagramLink" data-ig href="https://www.instagram.com/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+               stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"></circle>
+          </svg>
+          <span data-i18n="insta.follow">Follow @eladascornercafe →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>Elada's Corner</h3>
+      <p style="margin-top:10px" data-i18n="footer.tagline">A warm corner for beautiful pastries, good coffee, and memorable moments.</p>
+    </div>
+    <div>
+      <strong style="color:#fff;font-size:13px" data-i18n="footer.explore">Explore</strong>
+      <div class="footer-links" style="margin-top:12px;display:grid">
+        <a href="#menu" data-i18n="nav.menu">Menu</a>
+        <a href="#cakes" data-i18n="nav.cakes">Cakes</a>
+        <a href="#visit" data-i18n="nav.visit">Visit Us</a>
+      </div>
+    </div>
+    <div>
+      <strong style="color:#fff;font-size:13px" data-i18n="footer.contact">Contact</strong>
+      <div class="footer-links" style="margin-top:12px;display:grid">
+        <a data-tel href="tel:+18185550123" data-i18n="footer.call">Call Cafe</a>
+        <a data-maps href="https://www.google.com/maps/dir/?api=1&amp;destination=106+N+Glendale+Ave,+Glendale,+CA+91206"
+           target="_blank" rel="noopener" data-i18n="footer.dir">Directions</a>
+        <a id="instagramLinkFooter" class="footer-social" data-ig href="https://www.instagram.com/"
+           target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+               stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"></circle>
+          </svg>
+          <span data-i18n="footer.ig">Instagram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container copyright" style="margin-top:30px" data-i18n="footer.rights">© 2026 Elada's Corner Cafe. All rights reserved.</div>
+</footer>
+
+<nav class="mobile-nav" aria-label="Mobile">
+  <a href="#menu" data-spy="menu"><span aria-hidden="true">☰</span><span data-i18n="nav.menu">Menu</span></a>
+  <a href="#" class="nav-order" onclick="openOrder();return false"><span aria-hidden="true">🛍</span><span data-i18n="nav.order">Order</span></a>
+  <a data-tel href="tel:+18185550123"><span aria-hidden="true">☎</span><span data-i18n="footer.call">Call</span></a>
+  <a data-maps href="https://www.google.com/maps/dir/?api=1&amp;destination=106+N+Glendale+Ave,+Glendale,+CA+91206"
+     target="_blank" rel="noopener"><span aria-hidden="true">⌖</span><span data-i18n="footer.dir">Directions</span></a>
+  <a href="#visit" data-spy="visit"><span aria-hidden="true">◷</span><span data-i18n="visit.hoursTitle">Hours</span></a>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ================= ORDER MODAL ================= -->
+<div class="modal" id="orderModal" onclick="closeOutside(event)">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal-top">
+      <h2 id="orderTitle" data-i18n="order.title">Order for Pickup</h2>
+      <button class="close" type="button" id="orderClose" onclick="closeOrder()" aria-label="Close">×</button>
+    </div>
+    <div class="order-placeholder">
+      <strong data-i18n="order.lead">Freshly made. Ready when you are.</strong>
+      <p data-i18n="order.desc">Connect your verified Square or ChowNow ordering URL in the configuration block to activate live pickup ordering.</p>
+    </div>
+    <a class="external-order" id="realOrderLink" href="#" data-i18n="order.cta">Continue to Online Ordering →</a>
+    <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px" data-i18n="order.note">Pickup ordering · Payment options depend on the connected POS provider</p>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   1. CONFIGURATION
+   ============================================================ */
+const CONFIG = {
+  phone: "+18185550123",
+  orderingUrl: "",
+  instagramUrl: "https://www.instagram.com/",
+  mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=106+N+Glendale+Ave,+Glendale,+CA+91206"
+};
+
+/* ============================================================
+   2. TRANSLATIONS
+   ============================================================ */
+const I18N = {
+  en: {
+    "topbar":"Open daily · 8:00 AM – 12:00 AM · Glendale, California",
+    "nav.menu":"Menu","nav.cakes":"Cakes","nav.visit":"Visit Us","nav.instagram":"Instagram","nav.order":"Order Now",
+    "hero.eyebrow":"A little corner of something beautiful",
+    "hero.title":"Fresh Flavors <em>Waiting</em> to Be Discovered",
+    "hero.text":"Discover handcrafted pastries, comforting breakfast favorites, specialty coffee, and beautiful cakes made for every occasion.",
+    "hero.order":"Order for Pickup →","hero.explore":"Explore the Menu",
+    "quick.menu.s":"Explore","quick.menu.t":"Our Menu",
+    "quick.order.s":"Fast & Easy","quick.order.t":"Order Pickup",
+    "quick.call.s":"Questions?","quick.call.t":"Call the Cafe",
+    "quick.dir.s":"Find Us","quick.dir.t":"Get Directions",
+    "menu.eyebrow":"Made for your cravings","menu.title":"Explore Our Menu",
+    "menu.sub":"From your morning coffee to a cake worth celebrating.",
+    "feat.eyebrow":"A taste of Elada's","feat.title":"Made to Be Remembered",
+    "feat.1.t":"Fresh Pastries","feat.1.p":"Golden, delicate, unforgettable.",
+    "feat.2.t":"Specialty Coffee","feat.2.p":"Your perfect daily ritual.",
+    "feat.3.t":"Celebration Cakes","feat.3.p":"Made for life's sweetest moments.",
+    "cakes.eyebrow":"For your special moments",
+    "cakes.title":"Your celebration<br>deserves something special.",
+    "cakes.text":"Order whole cakes, full pastry trays, and custom celebration selections. Submit your request and our team will contact you to confirm availability.",
+    "cakes.li.1":"Whole Birthday Cakes","cakes.li.2":"Full Tray Cakes",
+    "cakes.li.3":"Roll Cakes","cakes.li.4":"Custom Celebration Requests",
+    "form.title":"Request a Cake","form.name":"Your Name","form.phone":"Phone Number",
+    "form.date":"Preferred Pickup Date","form.type":"Cake Type",
+    "form.details":"Tell us what you need","form.submit":"Send Cake Inquiry",
+    "form.select":"Select one",
+    "form.opt.1":"Whole Birthday Cake","form.opt.2":"Full Tray Cake",
+    "form.opt.3":"Roll Cake","form.opt.4":"Custom Request",
+    "form.name.ph":"Full name","form.phone.ph":"Phone number",
+    "form.details.ph":"Cake flavor, size, design, quantity, message...",
+    "visit.eyebrow":"Come say hello","visit.title":"Visit Our Corner",
+    "visit.badge":"● Open Daily","visit.hoursTitle":"Hours & Location",
+    "visit.days":"Monday – Sunday","visit.hours":"8:00 AM – 12:00 AM",
+    "visit.addrLabel":"Address","visit.addr":"106 N Glendale Ave",
+    "visit.cityLabel":"City","visit.city":"Glendale, CA 91206",
+    "visit.note":"Holiday hours may vary. Please call ahead on major holidays.",
+    "visit.directions":"Get Directions →","visit.map":"Open in Google Maps ↗",
+    "insta.eyebrow":"Follow the sweetness","insta.title":"From Our Instagram",
+    "insta.sub":"Fresh from our corner to your feed.",
+    "insta.follow":"Follow @eladascornercafe →",
+    "order.title":"Order for Pickup","order.lead":"Freshly made. Ready when you are.",
+    "order.desc":"Connect your verified Square or ChowNow ordering URL in the configuration block to activate live pickup ordering.",
+    "order.cta":"Continue to Online Ordering →",
+    "order.note":"Pickup ordering · Payment options depend on the connected POS provider",
+    "footer.tagline":"A warm corner for beautiful pastries, good coffee, and memorable moments.",
+    "footer.explore":"Explore","footer.contact":"Contact","footer.call":"Call Cafe",
+    "footer.dir":"Directions","footer.ig":"Instagram",
+    "footer.rights":"© 2026 Elada's Corner Cafe. All rights reserved.",
+    "toast.order":"Online ordering isn't configured yet — please call the cafe.",
+    "toast.cake":"Thanks! We'll contact you to confirm your cake request.",
+    "toast.lang":"Language: English"
+  },
+  es: {
+    "topbar":"Abierto todos los días · 8:00 AM – 12:00 AM · Glendale, California",
+    "nav.menu":"Menú","nav.cakes":"Pasteles","nav.visit":"Visítanos","nav.instagram":"Instagram","nav.order":"Ordenar",
+    "hero.eyebrow":"Un pequeño rincón de algo hermoso",
+    "hero.title":"Sabores Frescos <em>Esperando</em> Ser Descubiertos",
+    "hero.text":"Descubre pasteles artesanales, desayunos reconfortantes, café de especialidad y pasteles hermosos para cada ocasión.",
+    "hero.order":"Ordenar para Recoger →","hero.explore":"Ver el Menú",
+    "quick.menu.s":"Explora","quick.menu.t":"Nuestro Menú",
+    "quick.order.s":"Rápido y Fácil","quick.order.t":"Ordenar y Recoger",
+    "quick.call.s":"¿Preguntas?","quick.call.t":"Llama al Café",
+    "quick.dir.s":"Encuéntranos","quick.dir.t":"Cómo Llegar",
+    "menu.eyebrow":"Hecho para tus antojos","menu.title":"Explora Nuestro Menú",
+    "menu.sub":"Desde tu café de la mañana hasta un pastel digno de celebrar.",
+    "feat.eyebrow":"Un sabor de Elada's","feat.title":"Hecho para Ser Recordado",
+    "feat.1.t":"Pasteles Frescos","feat.1.p":"Dorados, delicados, inolvidables.",
+    "feat.2.t":"Café de Especialidad","feat.2.p":"Tu ritual diario perfecto.",
+    "feat.3.t":"Pasteles de Celebración","feat.3.p":"Para los momentos más dulces de la vida.",
+    "cakes.eyebrow":"Para tus momentos especiales",
+    "cakes.title":"Tu celebración<br>merece algo especial.",
+    "cakes.text":"Ordena pasteles enteros, charolas completas y selecciones personalizadas. Envía tu solicitud y nuestro equipo te contactará para confirmar disponibilidad.",
+    "cakes.li.1":"Pasteles de Cumpleaños","cakes.li.2":"Charolas Completas",
+    "cakes.li.3":"Rollos de Pastel","cakes.li.4":"Solicitudes Personalizadas",
+    "form.title":"Solicita un Pastel","form.name":"Tu Nombre","form.phone":"Número de Teléfono",
+    "form.date":"Fecha de Recogida","form.type":"Tipo de Pastel",
+    "form.details":"Cuéntanos qué necesitas","form.submit":"Enviar Solicitud",
+    "form.select":"Elige uno",
+    "form.opt.1":"Pastel de Cumpleaños","form.opt.2":"Charola Completa",
+    "form.opt.3":"Rollo de Pastel","form.opt.4":"Solicitud Personalizada",
+    "form.name.ph":"Nombre completo","form.phone.ph":"Número de teléfono",
+    "form.details.ph":"Sabor, tamaño, diseño, cantidad, mensaje...",
+    "visit.eyebrow":"Ven a saludar","visit.title":"Visita Nuestro Rincón",
+    "visit.badge":"● Abierto Todos los Días","visit.hoursTitle":"Horario y Ubicación",
+    "visit.days":"Lunes – Domingo","visit.hours":"8:00 AM – 12:00 AM",
+    "visit.addrLabel":"Dirección","visit.addr":"106 N Glendale Ave",
+    "visit.cityLabel":"Ciudad","visit.city":"Glendale, CA 91206",
+    "visit.note":"El horario puede variar en días festivos. Llama con anticipación.",
+    "visit.directions":"Cómo Llegar →","visit.map":"Abrir en Google Maps ↗",
+    "insta.eyebrow":"Sigue lo dulce","insta.title":"Desde Nuestro Instagram",
+    "insta.sub":"Fresco de nuestro rincón a tu feed.",
+    "insta.follow":"Sigue a @eladascornercafe →",
+    "order.title":"Ordenar para Recoger","order.lead":"Recién hecho. Listo cuando tú estés.",
+    "order.desc":"Conecta tu URL verificada de Square o ChowNow en el bloque de configuración para activar los pedidos en línea.",
+    "order.cta":"Continuar al Pedido en Línea →",
+    "order.note":"Pedidos para recoger · Las opciones de pago dependen del proveedor POS",
+    "footer.tagline":"Un rincón cálido para pasteles hermosos, buen café y momentos memorables.",
+    "footer.explore":"Explorar","footer.contact":"Contacto","footer.call":"Llamar",
+    "footer.dir":"Direcciones","footer.ig":"Instagram",
+    "footer.rights":"© 2026 Elada's Corner Cafe. Todos los derechos reservados.",
+    "toast.order":"Los pedidos en línea aún no están configurados — por favor llama al café.",
+    "toast.cake":"¡Gracias! Te contactaremos para confirmar tu solicitud.",
+    "toast.lang":"Idioma: Español"
+  },
+  ru: {
+    "topbar":"Открыто ежедневно · 8:00 – 00:00 · Глендейл, Калифорния",
+    "nav.menu":"Меню","nav.cakes":"Торты","nav.visit":"Как нас найти","nav.instagram":"Instagram","nav.order":"Заказать",
+    "hero.eyebrow":"Маленький уголок чего-то прекрасного",
+    "hero.title":"Свежие вкусы <em>ждут</em> вашего открытия",
+    "hero.text":"Откройте для себя пирожные ручной работы, сытные завтраки, кофе и красивые торты для любого случая.",
+    "hero.order":"Заказать самовывоз →","hero.explore":"Смотреть меню",
+    "quick.menu.s":"Изучите","quick.menu.t":"Наше меню",
+    "quick.order.s":"Быстро и просто","quick.order.t":"Заказ на вынос",
+    "quick.call.s":"Вопросы?","quick.call.t":"Позвонить в кафе",
+    "quick.dir.s":"Найдите нас","quick.dir.t":"Проложить маршрут",
+    "menu.eyebrow":"Для ваших желаний","menu.title":"Наше меню",
+    "menu.sub":"От утреннего кофе до торта, достойного праздника.",
+    "feat.eyebrow":"Вкус Elada's","feat.title":"Создано, чтобы запомниться",
+    "feat.1.t":"Свежая выпечка","feat.1.p":"Золотистая, нежная, незабываемая.",
+    "feat.2.t":"Кофе","feat.2.p":"Ваш идеальный ежедневный ритуал.",
+    "feat.3.t":"Праздничные торты","feat.3.p":"Для самых сладких моментов жизни.",
+    "cakes.eyebrow":"Для особых моментов",
+    "cakes.title":"Ваш праздник<br>заслуживает особенного.",
+    "cakes.text":"Закажите торты целиком, полные подносы и индивидуальные наборы. Отправьте запрос, и мы свяжемся с вами для подтверждения.",
+    "cakes.li.1":"Торты на день рождения","cakes.li.2":"Полные подносы",
+    "cakes.li.3":"Рулеты","cakes.li.4":"Индивидуальные заказы",
+    "form.title":"Заказать торт","form.name":"Ваше имя","form.phone":"Телефон",
+    "form.date":"Дата самовывоза","form.type":"Тип торта",
+    "form.details":"Расскажите, что нужно","form.submit":"Отправить запрос",
+    "form.select":"Выберите",
+    "form.opt.1":"Торт на день рождения","form.opt.2":"Полный поднос",
+    "form.opt.3":"Рулет","form.opt.4":"Индивидуальный заказ",
+    "form.name.ph":"Полное имя","form.phone.ph":"Номер телефона",
+    "form.details.ph":"Вкус, размер, дизайн, количество, надпись...",
+    "visit.eyebrow":"Заходите поздороваться","visit.title":"Наш уголок",
+    "visit.badge":"● Открыто ежедневно","visit.hoursTitle":"Часы работы и адрес",
+    "visit.days":"Понедельник – Воскресенье","visit.hours":"8:00 – 00:00",
+    "visit.addrLabel":"Адрес","visit.addr":"106 N Glendale Ave",
+    "visit.cityLabel":"Город","visit.city":"Глендейл, CA 91206",
+    "visit.note":"В праздничные дни часы работы могут меняться. Позвоните заранее.",
+    "visit.directions":"Проложить маршрут →","visit.map":"Открыть в Google Maps ↗",
+    "insta.eyebrow":"Следите за сладким","insta.title":"Из нашего Instagram",
+    "insta.sub":"Свежее из нашего уголка — прямо в вашу ленту.",
+    "insta.follow":"Подписаться @eladascornercafe →",
+    "order.title":"Заказ на самовывоз","order.lead":"Всё свежее. Готово, когда вам удобно.",
+    "order.desc":"Укажите проверенную ссылку Square или ChowNow в блоке настроек, чтобы включить онлайн-заказы.",
+    "order.cta":"Перейти к онлайн-заказу →",
+    "order.note":"Самовывоз · Способы оплаты зависят от подключённого POS-провайдера",
+    "footer.tagline":"Тёплый уголок с красивой выпечкой, хорошим кофе и памятными моментами.",
+    "footer.explore":"Разделы","footer.contact":"Контакты","footer.call":"Позвонить",
+    "footer.dir":"Маршрут","footer.ig":"Instagram",
+    "footer.rights":"© 2026 Elada's Corner Cafe. Все права защищены.",
+    "toast.order":"Онлайн-заказ пока не настроен — позвоните в кафе.",
+    "toast.cake":"Спасибо! Мы свяжемся с вами для подтверждения заказа.",
+    "toast.lang":"Язык: Русский"
+  }
+};
+
+const LANGS = ["en","es","ru"];
+const LANG_LABEL = { en:"EN", es:"ES", ru:"RU" };
+let currentLang = "en";
+
+/* ============================================================
+   3. TOAST
+   ============================================================ */
+let toastTimer = null;
+function showToast(message){
+  const t = document.getElementById("toast");
+  if(!t) return;
+  t.textContent = message;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 3400);
+}
+
+/* ============================================================
+   4. LANGUAGE
+   ============================================================ */
+function applyLanguage(lang){
+  if(!I18N[lang]) lang = "en";
+  currentLang = lang;
+  const dict = I18N[lang];
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if(dict[key] != null) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if(dict[key] != null) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => {
+    const key = el.dataset.i18nPh;
+    if(dict[key] != null) el.placeholder = dict[key];
+  });
+
+  const btn = document.getElementById("languageBtn");
+  if(btn){
+    btn.textContent = LANG_LABEL[lang];
+    btn.setAttribute("aria-label", "Change language — current: " + LANG_LABEL[lang]);
+  }
+
+  try { localStorage.setItem("elada-lang", lang); } catch(e){}
+}
+
+function toggleLanguage(){
+  const next = LANGS[(LANGS.indexOf(currentLang) + 1) % LANGS.length];
+  applyLanguage(next);
+  showToast(I18N[next]["toast.lang"]);
+}
+
+/* ============================================================
+   5. MENU TABS
+   ============================================================ */
+function showMenu(index, button){
+  const panels = document.querySelectorAll(".menu-panel");
+  const tabs   = document.querySelectorAll(".menu-tab");
+
+  panels.forEach((panel, i) => {
+    const isActive = i === index;
+    panel.classList.toggle("active", isActive);
+    panel.toggleAttribute("hidden", !isActive);
+    panel.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  tabs.forEach((tab, i) => {
+    const isActive = i === index;
+    tab.classList.toggle("active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.tabIndex = isActive ? 0 : -1;
+  });
+
+  if(button && typeof button.focus === "function"){
+    button.focus({ preventScroll: true });
+  }
+}
+
+/* Arrow-key navigation for the tablist */
+(function initTabKeys(){
+  const tablist = document.querySelector(".menu-tabs");
+  if(!tablist) return;
+  tablist.addEventListener("keydown", e => {
+    if(e.key !== "ArrowRight" && e.key !== "ArrowLeft" &&
+       e.key !== "Home" && e.key !== "End") return;
+    const tabs = Array.from(tablist.querySelectorAll(".menu-tab"));
+    const idx = tabs.indexOf(document.activeElement);
+    if(idx === -1) return;
+    e.preventDefault();
+    let next;
+    if(e.key === "ArrowRight") next = (idx + 1) % tabs.length;
+    else if(e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+    else if(e.key === "Home") next = 0;
+    else next = tabs.length - 1;
+    showMenu(next, tabs[next]);
+  });
+})();
+
+/* ============================================================
+   6. ORDER MODAL
+   ============================================================ */
+const orderModal = document.getElementById("orderModal");
+let lastFocused = null;
+
+function openOrder(){
+  if(!orderModal) return;
+  lastFocused = document.activeElement;
+  orderModal.classList.add("show");
+  orderModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  const closeBtn = document.getElementById("orderClose");
+  if(closeBtn) closeBtn.focus();
+}
+
+function closeOrder(){
+  if(!orderModal) return;
+  orderModal.classList.remove("show");
+  orderModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if(lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+}
+
+function closeOutside(e){
+  if(e.target === orderModal) closeOrder();
+}
+
+/* Esc to close + focus trap */
+document.addEventListener("keydown", e => {
+  if(!orderModal || !orderModal.classList.contains("show")) return;
+
+  if(e.key === "Escape"){ closeOrder(); return; }
+
+  if(e.key === "Tab"){
+    const focusables = orderModal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if(!focusables.length) return;
+    const first = focusables[0];
+    const last  = focusables[focusables.length - 1];
+
+    if(e.shiftKey && document.activeElement === first){
+      e.preventDefault(); last.focus();
+    } else if(!e.shiftKey && document.activeElement === last){
+      e.preventDefault(); first.focus();
+    }
+  }
+});
+
+/* ============================================================
+   7. ORDERING LINK
+   ============================================================ */
+(function initOrdering(){
+  const link = document.getElementById("realOrderLink");
+  if(!link) return;
+
+  if(CONFIG.orderingUrl){
+    link.href = CONFIG.orderingUrl;
+    link.target = "_blank";
+    link.rel = "noopener";
+  } else {
+    link.setAttribute("aria-disabled", "true");
+  }
+
+  link.addEventListener("click", e => {
+    if(!CONFIG.orderingUrl){
+      e.preventDefault();
+      showToast(I18N[currentLang]["toast.order"]);
+    }
+  });
+})();
+
+/* ============================================================
+   8. CAKE FORM
+   ============================================================ */
+(function initCakeForm(){
+  const form = document.getElementById("cakeForm");
+  const dateInput = document.getElementById("pickupDate");
+
+  if(dateInput){
+    const d = new Date();
+    d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+    dateInput.min = d.toISOString().split("T")[0];
+  }
+
+  if(!form) return;
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    showToast(I18N[currentLang]["toast.cake"]);
+    form.reset();
+  });
+})();
+
+/* ============================================================
+   9. CONFIG APPLY
+   ============================================================ */
+(function applyConfig(){
+  document.querySelectorAll("[data-tel]").forEach(a => {
+    a.href = "tel:" + CONFIG.phone;
+  });
+
+  document.querySelectorAll("[data-maps]").forEach(a => {
+    a.href = CONFIG.mapsUrl;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  document.querySelectorAll("[data-ig]").forEach(a => {
+    a.href = CONFIG.instagramUrl;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+})();
+
+/* ============================================================
+   10. SCROLL SPY (mobile nav)
+   ============================================================ */
+(function initScrollSpy(){
+  const links = document.querySelectorAll(".mobile-nav a[data-spy]");
+  if(!links.length || !("IntersectionObserver" in window)) return;
+
+  const map = {};
+  links.forEach(l => { map[l.dataset.spy] = l; });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      links.forEach(l => l.classList.remove("active"));
+      const target = map[entry.target.id];
+      if(target) target.classList.add("active");
+    });
+  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+
+  Object.keys(map).forEach(id => {
+    const section = document.getElementById(id);
+    if(section) observer.observe(section);
+  });
+})();
+
+/* ============================================================
+   11. SCROLL REVEAL
+   ============================================================ */
+(function initReveal(){
+  const items = document.querySelectorAll(".reveal");
+  if(!items.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if(reduce || !("IntersectionObserver" in window)){
+    items.forEach(el => el.classList.add("in"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("in");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+  items.forEach(el => observer.observe(el));
+})();
+
+/* ============================================================
+   12. INIT
+   ============================================================ */
+(function init(){
+  /* language button click */
+  const btn = document.getElementById("languageBtn");
+  if(btn) btn.addEventListener("click", toggleLanguage);
+
+  /* restore saved language */
+  let saved = "en";
+  try { saved = localStorage.getItem("elada-lang") || "en"; } catch(e){}
+  applyLanguage(I18N[saved] ? saved : "en");
+
+  /* set initial aria-hidden on modal */
+  if(orderModal) orderModal.setAttribute("aria-hidden", "true");
+})();
+</script>
+</body>
+</html>
